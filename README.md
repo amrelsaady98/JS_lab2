@@ -8,4 +8,5 @@
   - worng date year > 2024 || < 1950 => passed
 - console shows array and array after remove a certain item "3" from it
 - console shows array and shuffeled array and sorted array
+
 => URL: https://amrelsaady98.github.io/JS_lab2/
