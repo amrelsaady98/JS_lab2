@@ -63,21 +63,21 @@ try {
     for (let i = 0; i < dateArray.length; i++) {
       switch (i) {
         case 0:
-          if (Number.parseInt(dateArray[i]) >= 31 || Number.parseInt(dateArray[i]) <= 1) {
+          if (Number.parseInt(dateArray[i]) > 31 || Number.parseInt(dateArray[i]) < 1) {
             return "Day Must be in range of 1 ~ 31";
           } else {
             dateObject.setDate(Number.parseInt(dateArray[i]))
           }
           break;
         case 1:
-          if (Number.parseInt(dateArray[i]) >= 12 || Number.parseInt(dateArray[i]) <= 1) {
+          if (Number.parseInt(dateArray[i]) > 12 || Number.parseInt(dateArray[i]) < 1) {
             return "Month Must be in range of 1 ~ 12";
           } else {
             dateObject.setMonth(Number.parseInt(dateArray[i]))
           }
           break;
         case 2:
-          if (Number.parseInt(dateArray[i]) >= 2024 || Number.parseInt(dateArray[i]) <= 1950) {
+          if (Number.parseInt(dateArray[i]) > 2024 || Number.parseInt(dateArray[i]) < 1950) {
             return "Year Must be in range of 1950 ~ 2024";
           } else {
             dateObject.setMonth(Number.parseInt(dateArray[i]))
