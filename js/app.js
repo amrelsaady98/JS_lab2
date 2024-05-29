@@ -97,9 +97,10 @@ try {
   // Tasks #05, #06 --------------------------------------------------------------------
 
   var numbers = [0, 1, 2, 3, 4, 3, 5, 6, 7, 3, 8, 9, 3];
+
+  console.log(numbers)
   console.log(countItems(numbers, 10));
   console.log(removeItem(numbers, 3));
-  console.table(numbers)
 
   /**
    * Count the matched items in an array, if array does not contain item returns 0;
