@@ -80,7 +80,7 @@ try {
           if (Number.parseInt(dateArray[i]) > 2024 || Number.parseInt(dateArray[i]) < 1950) {
             return "Year Must be in range of 1950 ~ 2024";
           } else {
-            dateObject.setMonth(Number.parseInt(dateArray[i]))
+            dateObject.setFullYear(Number.parseInt(dateArray[i]))
           }
           break;
       }
