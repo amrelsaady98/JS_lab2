@@ -52,6 +52,10 @@ try {
     let dateArray = dateString.split('-')
     let dateObject = new Date();
 
+    if(dateArray.length < 3){
+      return "invalid date format, use '-' separator";
+    }
+
 
     //check whether the date string contains letters
     for (let i = 0; i < dateArray.length; i++) {
