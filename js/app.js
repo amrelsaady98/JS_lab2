@@ -74,7 +74,6 @@ try {
           if (Number.parseInt(dateArray[j]) > 12 || Number.parseInt(dateArray[j]) < 1) {
             return "Month Must be in range of 1 ~ 12";
           } else {
-            console.log("Month --> " + Number.parseInt(dateArray[j]));
             dateObject.setMonth(Number.parseInt(dateArray[j]))
           }
           break;
