@@ -156,10 +156,24 @@ try {
     }
   }
 
+
+  /**
+   * swap shuffle implementation
+   * */
   function shuffleArray(array) {
-    array.sort(function (a, b) {
-      return Math.random() - 0.5;
-    });
+    let currentIndex = array.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
   }
 
   var numbersToSort = [0, 1, 2, 3, 4, 3, 5, 6, 7, 3, 8, 9, 3];
