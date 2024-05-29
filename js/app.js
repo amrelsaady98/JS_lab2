@@ -67,21 +67,21 @@ try {
           if (Number.parseInt(dateArray[j]) > 31 || Number.parseInt(dateArray[j]) < 1) {
             return "Day Must be in range of 1 ~ 31";
           } else {
-            dateObject.setDate(Number.parseInt(dateArray[j]))
+            dateObject.setDate(Number.parseInt(dateArray[j]));
           }
           break;
         case 1:
           if (Number.parseInt(dateArray[j]) > 12 || Number.parseInt(dateArray[j]) < 1) {
             return "Month Must be in range of 1 ~ 12";
           } else {
-            dateObject.setMonth(Number.parseInt(dateArray[j]) - 1)
+            dateObject.setMonth(Number.parseInt(dateArray[j]) - 1);
           }
           break;
         case 2:
           if (Number.parseInt(dateArray[j]) > 2024 || Number.parseInt(dateArray[j]) < 1950) {
             return "Year Must be in range of 1950 ~ 2024";
           } else {
-            dateObject.setFullYear(Number.parseInt(dateArray[j]))
+            dateObject.setFullYear(Number.parseInt(dateArray[j]));
           }
           break;
       }

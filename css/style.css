@@ -44,15 +44,42 @@
 
   text-align: center;
 
-
+  cursor: pointer;
   background: #ffcb7c;
   display: inline-block;
   box-shadow: #AAAAAA 4px 2px 12px;
+
+  animation-name: button-hover-release;
+  animation-duration: 0.2s;
+
+  transition: 0.2s;
+}
+.button:hover{
+  animation-name: button-hover-animation;
+  animation-duration: 0.5s;
+  transform: scale(1.2);
 }
 .button:active{
   background: #AAAAAA;
   color: #ffc97b;
 }
+@keyframes button-hover-animation {
+  from {transform: scale(1)}
+  to {transform: scale(1.2)}
+}
+@-moz-keyframes button-hover-animation {
+  from {transform: scale(1)}
+  to {transform: scale(1.2)}
+}
+@keyframes button-hover-release {
+  from {transform: scale(1.2)}
+  to {transform: scale(1)}
+}
+@-moz-keyframes button-hover-release {
+  from {transform: scale(1.2)}
+  to {transform: scale(1)}
+}
+
 #date-input {
   border: #5800c2 solid 2px;
   display: inline-block;
