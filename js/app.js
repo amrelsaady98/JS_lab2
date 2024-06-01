@@ -13,7 +13,9 @@ try {
     "Use the Spread Operator to Copy and Merge Arrays",
     "Use Arrow Syntax to Write Shorter and More Elegant Functions",
   ]
-  document.getElementById('tip-content').innerHTML = tipsArray[Math.floor(Math.random() * tipsArray.length)];
+  let randomIndex = Math.floor(Math.random() * tipsArray.length); //0 ~ 1 .1 * array.lenth = 0
+  console.log(Math.floor(randomIndex));
+  document.getElementById('tip-content').innerHTML = tipsArray[randomIndex];
 
   // tasks #02, #03, #04 + bonus #01
 
@@ -28,6 +30,9 @@ try {
   let dateInputDataText;
   let dateValidationResult;
   let dateObject;
+  function showDate(){
+
+  }
 
   showDateButton.addEventListener('click', function () {
     alert(new Date().toLocaleDateString());
@@ -35,12 +40,12 @@ try {
   validateDateButton.addEventListener('click', function () {
     dateInputDataText = dateInput.value;
     dateValidationResult = validateDateString(dateInputDataText);
-    if (typeof dateValidationResult === Date) {
-      alert("date is valid");
-
-    } else {
-      alert(dateValidationResult);
-    }
+    alert(dateValidationResult);
+    // if (typeof dateValidationResult === Date) {
+    //   alert("date is valid");
+    // } else {
+    //   alert(dateValidationResult);
+    // }
   })
 
   /**
@@ -49,10 +54,10 @@ try {
    * @dateString date in string format to validate
    * */
   function validateDateString(dateString) {
-    let dateArray = dateString.split('-')
+    let dateArray = dateString.split('-') // ["12", "12", '2012']
     let dateObject = new Date();
 
-    if(dateArray.length < 3){
+    if(dateArray.length != 3 ){
       return "invalid date format, use '-' separator";
     }
 
@@ -78,7 +83,7 @@ try {
           if (Number.parseInt(dateArray[j]) > 12 || Number.parseInt(dateArray[j]) < 1) {
             return "Month Must be in range of 1 ~ 12";
           } else {
-            dateObject.setMonth(Number.parseInt(dateArray[j]) - 1);
+            dateObject.setMonth(Number.parseInt(dateArray[j]) - 1); // 10 -> oct
           }
           break;
         case 2:
@@ -100,7 +105,7 @@ try {
 
   console.log(numbers)
   console.log(countItems(numbers, 10));
-  console.log(removeItem(numbers, 3));
+  console.log(countItems(numbers, 3));
 
   /**
    * Count the matched items in an array, if array does not contain item returns 0;
@@ -115,6 +120,8 @@ try {
     return itemCount;
   }
 
+  // [0, 1, 2, 5, 6, 7, 8, 9, 10]
+
   /**
    * remove all items in array matches the required item
    * @item the the required item to be removed
@@ -123,13 +130,24 @@ try {
     let i = 0;
     while (i < array.length) {
       if (array[i] === item) {
-        array.splice(i, 1);
+        array.splice(i, 1); // remove n of items from index i
       } else {
         ++i;
       }
     }
     return array;
   }
+
+  //2026/1/1 date.now()
+  let graduationDate = new Date()
+  graduationDate.setFullYear(2026)
+  graduationDate.setMonth(7)
+  graduationDate.setDate(20)
+  setInterval(function(){
+    console.log("Years --> " + (graduationDate.getFullYear() - new Date().getFullYear()))
+    console.log("month --> " + (graduationDate.getMonth() - new Date().getMonth()))
+    console.log("days --> " + (graduationDate.getDate() - new Date().getDate()))
+  }, 1000)
 
 // bonus #02 ----------------------------------------------------------------
   window.addEventListener('error', function (error) {
